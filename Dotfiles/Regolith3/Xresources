@@ -1,0 +1,14 @@
+regolith.look.path: /usr/share/regolith-look/ayu-dark
+regolith.wallpaper.file: /usr/share/backgrounds/bg1.jpg
+gnome.terminal.font: JetBrainsMono Nerd Font 12
+wm.bar.mode: hide
+wm.font: JetBrainsMono Nerd Font 12
+gtk.font_name: JetBrainsMono Nerd Font 12
+gtk.monospace_font_name: JetBrainsMono Nerd Font Mono 12
+i3xrocks.value.font: JetBrainsMono Nerd Font 12
+rofi.font: JetBrainsMono Nerd Font 12
+wm.gaps.inner.size:	5
+wm.gaps.outer.size:	5
+wm.client.focused.color.child_border: #693663
+wm.client.focused.color.border: #ed00d1
+wm.window.border.size: 3
