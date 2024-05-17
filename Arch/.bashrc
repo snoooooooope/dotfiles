@@ -18,7 +18,6 @@ alias UM="eos-rankmirrors"
 alias um="eos-rankmirrors"
 alias clean="yay -Yc && yay -Scc"
 alias hx="helix"
-alias lg="lazygit"
 alias hp="wpctl set-default 78"
 alias sp="wpctl set-default 52"
 
@@ -29,8 +28,10 @@ PS1='\[\e[97;1m\]\u\[\e[0m\] \[\e[97;1m\]-> \[\e[0m\] \[\e[97;1m\]\w\[\e[0m\] '
 tre() { command tre "$@" -e && source "/tmp/tre_aliases_$USER" 2>/dev/null; }
 
 # PATHS
-export PATH=$PATH:~/build/tre/target/release/
-export PATH=$PATH:~/build/grim/build/
+export PATH=$PATH:~/Build/tre/target/release/
+export PATH=$PATH:~/Build/grim/build/
+export PATH=$PATH:~/go/bin
+
 # Env
 . "$HOME/.cargo/env"
 eval "$(starship init bash)"
