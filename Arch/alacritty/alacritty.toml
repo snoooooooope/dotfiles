@@ -18,10 +18,17 @@
 # I put the file alacritty.toml in $HOME/.config/alacritty. However it can be kept anywhere among the places mentioned in
 # https://github.com/alacritty/alacritty/tree/master#configuration
 
+[env]
+TERM = "xterm-256color"
+
+[bell.command]
+args = ["Finished Task", "Alacritty"]
+program = "notify-send"
 
 [window]
+opacity = 0.8
 
-opacity = 0.9
+blur = true
 
 padding.x = 0
 padding.y = 0
@@ -30,11 +37,42 @@ decorations = "Full"
 decorations_theme_variant = "Dark" # "Dark"
 
 [font]
+size = 11.0
+
+normal.family = "JetBrainsMono Nerd Font"
+bold.family = "JetBrainsMono Nerd Font"
+italic.family = "JetBrainsMono Nerd Font"
+bold_italic.family = "JetBrainsMono Nerd Font"
+
+[colors]
+draw_bold_text_with_bright_colors = true
 
 
-
-size = 10.0
-
-# Tip: for inspiration, look for values in the source code files of your favorite VS Code themes, and use the color picker in
-# Google to test colors before setting a value, or simply using an editor such as VS Code where colors are displayed in a 
-# small box when a HEX is detected by the editor.
+# Colors Ef-Symbiosis
+[colors.normal]
+black = '#221920'
+red = '#ef6360'
+green = '#0faa26'
+yellow = '#bf9032'
+blue = '#3f95f6'
+magenta = '#d369af'
+cyan = '#4fbaef'
+white = '#d0d0d0'
+[colors.bright]
+black = '#4b3f47'
+red = '#fe5a7a'
+green = '#00a692'
+yellow = '#df8a5a'
+blue = '#029fff'
+magenta = '#af85ff'
+cyan = '#1dbfcf'
+white = '#857f8f'
+[colors.cursor]
+cursor = '#f0af7f'
+text = '#130911'
+[colors.primary]
+background = '#130911'
+foreground = '#d0d0d0'
+[colors.selection]
+background = '#3f2f40'
+text = '#d0d0d0'
