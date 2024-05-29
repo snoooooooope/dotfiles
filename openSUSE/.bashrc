@@ -10,14 +10,20 @@
 # read ~/.bashrc; in our setup, /etc/profile sources ~/.bashrc - thus all
 # settings made here will also take effect in a login shell.
 
-# Terminal name
-PS1='\[\e[97;1m\]\u\[\e[0m\] \[\e[97;1m\]-> \[\e[0m\] \[\e[97;1m\]\w\[\e[0m\] '
+#Shopt
+shopt -s cdspell; # Autocorrects typos in path
+shopt -s autocd; # Removes the need of CD in current directory
+shopt -s histappend; # Append to the history file, don't overwrite it
 
 # Custom Aliases
 alias ..="cd .."
 alias hx="helix"
-alias uu="sudo zypper dup"
-alias UU="sudo zypper dup"
+alias su="sudo zypper dup"
+alias SU="sudo zypper dup"
+alias pu="sudo zypper up"
+alias PU="sudo zypper up"
+alias list-updates="sudo zypper lp && sudo zypper lu"
+alias clean="sudo zypper clean"
 
 # Env
 eval "$(zoxide init bash)"
