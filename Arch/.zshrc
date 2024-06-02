@@ -23,16 +23,16 @@ autoload -Uz compinit
 compinit
 
 # Custom Aliases
-alias ls='ls --color=auto'
+alias ls='ls -a --color=auto'
+alias rg="rg --color=auto"
 alias grep='grep --color=auto'
 alias ..="cd .."
-alias updatemirrors="eos-rankmirrors"
 alias clean="paru -Scc"
 alias hx="helix"
 alias hp="wpctl set-default 78"
-alias sp="wpctl set-default 52"
-
-# PATHS
+alias sp="wpctl set-default 51"
+alias depcheck="pacman -Qdt"
+alias depclean="sudo pacman -Qdtq | sudo pacman -Rns -"
 
 # Env
 eval "$(starship init zsh)"
@@ -40,8 +40,8 @@ eval "$(lua /usr/share/z.lua/z.lua --init zsh enhanced once fzf)"
 
 # Defaults
 export EDITOR=helix;
-export TERMINAL=alacritty;
-export TERM=alacritty;
+export TERMINAL=kitty;
+export TERM=kitty;
 export VISUAL=helix;
 export MANPAGER="sh -c 'col -bx | bat -l man -p'";
 export MANROFFOPT="-c";
