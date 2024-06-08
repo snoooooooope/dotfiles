@@ -1,30 +1,279 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+follow_symlinks = true
+scan_timeout = 30
+command_timeout = 500
+
 format = """
 $username\
 $directory\
 $git_branch\
+$git_commit\
 $git_status\
+$git_state\
 """
 
-add_newline = false
-command_timeout = 1000
+right_format = """ 
+$rust\
+$c\
+$elixir\
+$golang\
+$lua\
+$cmd_duration\
+$jobs\
+$localip\
+$time\
+"""
 
-[username]
-show_always = true
-style_user = "fg:#939AFF"
-style_root = "fg:#939AFF"
-format = "[ $user]($style bold)"
+[line_break]
+disabled = true 
+
+[package]
+disabled = true
+
+[localip]
+ssh_only = true
+format = " [$localipv4](bold magenta) "
+disabled = false
+
+[cmd_duration]
+min_time = 2000
+format = "[$duration]($style) |"
+style = "dimmed white"
+show_milliseconds = false
+disabled = false
+show_notifications = false
+min_time_to_notify = 45000
 
 [directory]
-style = "fg:#DBAAEF"
-format = "[ $path ]($style bold)"
+style = "white bold"
+format = "[$path ]($style)[$read_only]($read_only_style)"
+home_symbol = "~"
+fish_style_pwd_dir_length = 0
 truncation_length = 3
 truncation_symbol = "../"
+read_only ="  "
+read_only_style = "red"
+
+[jobs]
+format = "[ $symbol$number]($style)"
+style = "white"
+symbol = "[▶ ](dimmed white)"
+
+[username]
+style_user = "dimmed purple bold"
+style_root = "red bold italic"
+format = "[$user]($style) "
+disabled = false
+show_always = true
+
+# Git #
 
 [git_branch]
-symbol = "?"
-style = "fg:#FAAA9F"
-format = '[$symbol $branch ]($style bold)'
+disabled = false
+symbol = " "
+style = "fg:#b79999"
+truncation_length = 5   # length == ABCDE
+format = '[$symbol $branch (:$remote_branch)]($style) ' # this sets path ../../../../
+
+[git_commit]
+disabled = false
+commit_hash_length = 1
+
+[git_state]
+disabled = false
+rebase = "rebasing"
+merge = "merging"
+revert = "reverting"
+cherry_pick = " picking"
+bisect = "bisecting"
+am = "am'ing"
+am_or_rebase = "am/rebase"
 
 [git_status]
-style = "fg:#F36003"
-format = '[($all_status$ahead_behind )](#style bold)'
+disabled = false
+style= "fg:#5F8575"
+stashed = " ${count}"
+ahead = "󰞙 ${count}"
+behind = "󰞒 ${count}"
+diverged = "󰵉 ${ahead_count} ${behind_count}"
+conflicted = " ${count}"
+deleted = " ${count}"
+renamed = " ${count}"
+modified = " ${count}"
+staged = " ${count}"
+untracked = "󱅘 ${count}"
+
+[time]
+disabled = false
+format = "[ $time]($style)"
+time_format = "%I:%M %P"
+utc_time_offset = "local"
+style = "dimmed white"
+
+# Nerd Fonts #
+
+[aws]
+symbol = "  "
+format = "[$symbol]($style)"
+style = "dimmed white"
+
+[buf]
+symbol = " "
+format = "[$symbol]($style)"
+style = "dimmed white"
+
+[c]
+symbol = " "
+format = "[$symbol]($style)"
+style = "dimmed white"
+
+[conda]
+symbol = " "
+format = "[$symbol]($style)"
+style = "dimmed white"
+
+[crystal]
+symbol = " "
+format = "[$symbol]($style)"
+style = "dimmed white"
+
+[dart]
+symbol = " "
+format = "[$symbol]($style)"
+style = "dimmed white"
+
+[docker_context]
+symbol = " "
+format = "[$symbol]($style)"
+style = "dimmed white"
+
+[elixir]
+symbol = " "
+format = "[$symbol]($style)"
+style = "dimmed white"
+
+[elm]
+symbol = " "
+format = "[$symbol]($style)"
+style = "dimmed white"
+
+[fennel]
+symbol = " "
+format = "[$symbol]($style)"
+style = "dimmed white"
+
+[golang]
+symbol = " "
+format = "[$symbol]($style)"
+style = "dimmed white"
+
+[guix_shell]
+symbol = " "
+format = "[$symbol]($style)"
+style = "dimmed white"
+
+[haskell]
+symbol = " "
+format = "[$symbol]($style)"
+style = "dimmed white"
+
+[haxe]
+symbol = " "
+format = "[$symbol]($style)"
+style = "dimmed white"
+
+[java]
+symbol = " "
+format = "[$symbol]($style)"
+style = "dimmed white"
+
+[julia]
+symbol = " "
+format = "[$symbol]($style)"
+style = "dimmed white"
+
+[kotlin]
+symbol = " "
+format = "[$symbol]($style)"
+style = "dimmed white"
+
+[lua]
+symbol = " "
+format = "[$symbol]($style)"
+style = "dimmed white"
+
+[meson]
+symbol = "󰔷 "
+format = "[$symbol]($style)"
+style = "dimmed white"
+
+[nim]
+symbol = "󰆥 "
+format = "[$symbol]($style)"
+style = "dimmed white"
+
+[nix_shell]
+symbol = " "
+format = "[$symbol]($style)"
+style = "dimmed white"
+
+[nodejs]
+symbol = " "
+format = "[$symbol]($style)"
+style = "dimmed white"
+
+[ocaml]
+symbol = " "
+format = "[$symbol]($style)"
+style = "dimmed white"
+
+[perl]
+symbol = " "
+format = "[$symbol]($style)"
+style = "dimmed white"
+
+[php]
+symbol = " "
+format = "[$symbol]($style)"
+style = "dimmed white"
+
+[pijul_channel]
+symbol = " "
+format = "[$symbol]($style)"
+style = "dimmed white"
+
+[python]
+symbol = " "
+format = "[$symbol]($style)"
+style = "dimmed white"
+
+[rlang]
+symbol = "󰟔 "
+format = "[$symbol]($style)"
+style = "dimmed white"
+
+[ruby]
+symbol = " "
+format = "[$symbol]($style)"
+style = "dimmed white"
+
+[rust]
+symbol = " "
+format = "[$symbol]($style)"
+style = "dimmed white"
+
+
+[scala]
+symbol = " "
+format = "[$symbol]($style)"
+style = "dimmed white"
+
+[swift]
+symbol = " "
+format = "[$symbol]($style)"
+style = "dimmed white"
+
+[zig]
+symbol = " "
+format = "[$symbol]($style)"
+style = "dimmed white"
