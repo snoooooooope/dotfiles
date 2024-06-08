@@ -1,8 +1,5 @@
 # Dotfiles
 
-Dawt files for Ubuntu / Arch (WIP)
-
+Dotfiles for Arch.
 
 # TODO #
-remove Ubuntu dots whenever documents are transfered
-fonts / scripts
